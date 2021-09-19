@@ -1,8 +1,9 @@
 import "./App.css";
 import React from "react";
+import axios from "axios";
 
 export default function App() {
-  const [pattern, setPattern] = React.useState([]);
+  const [pattern, setPattern] = React.useState({});
 
   return (
     <div className="App">
@@ -14,7 +15,7 @@ export default function App() {
         everyone you see! Happy making!
       </h3>
       <br />
-      <form className="container">
+      <div className="container">
         <label for="nameInput">Name:</label>
         <input
           class="inputField"
@@ -61,15 +62,26 @@ export default function App() {
         />
         <br />
         <br />
-        <button class="inputField">Submit</button>
-      </form>
+        <button
+          class="inputField"
+          onClick={() => {
+            axios
+              .post("http://localhost:3001/pattern", pattern)
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+          }}
+        >
+          Submit
+        </button>
+      </div>
       {/* <img
           src="https://i.etsystatic.com/21643598/r/il/bca6a4/3346861401/il_1588xN.3346861401_1o4h.jpg"
           alt="Everything's Pine"
         /> */}
-      <label for="imgInput">
-        {pattern.image} {pattern.name} {pattern.price}
-      </label>
     </div>
   );
 }
