@@ -1,0 +1,50 @@
+/* POST - create recipe
+GET - get recipe
+DELETE - delete recipe
+PUT - edit recipe */
+
+.App {
+  font-family: "Guardian-EgypTT", Charter, "Charter Bitstream", Cambria,
+    "Noto Serif Light", "Droid Serif", Georgia, serif;
+  letter-spacing: 0.5px;
+  color: black;
+}
+
+.image {
+  background: url("https://i.etsystatic.com/isbl/85887b/49474033/isbl_3360x840.49474033_s4ln7zax.jpg?version=0");
+  background-size: cover;
+  background-position: center;
+  height: 100px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  position: fixed;
+}
+
+h1 {
+  font-weight: 300;
+  color: rgb(247, 247, 247);
+  margin-top: 5px;
+  text-align: center;
+}
+
+h3 {
+  color: #595959;
+  margin-top: 100px;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+}
+
+img {
+  width: 200px;
+}
+
+.inputField {
+  width: fit-content;
+}
