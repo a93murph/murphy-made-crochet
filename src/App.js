@@ -36,7 +36,8 @@ export default function App() {
           placeholder="$9.15"
           value={pattern.price}
           onChange={(e) => {
-            setPattern({ ...pattern, price: e.target.value });
+            setPattern({ ...pattern, price: parseInt(e.target.value) });
+            console.log(pattern.price);
           }}
         />
         <br />
