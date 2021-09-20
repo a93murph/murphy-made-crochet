@@ -33,10 +33,11 @@ export default function App() {
           class="inputField"
           id="priceInput"
           type="number"
+          step=".01"
           placeholder="$9.15"
           value={pattern.price}
           onChange={(e) => {
-            setPattern({ ...pattern, price: parseInt(e.target.value) });
+            setPattern({ ...pattern, price: parseFloat(e.target.value) });
             console.log(pattern.price);
           }}
         />
@@ -74,6 +75,7 @@ export default function App() {
               .catch(function (error) {
                 console.log(error);
               });
+            setPattern({ name: "", price: "", description: null });
           }}
         >
           Submit
